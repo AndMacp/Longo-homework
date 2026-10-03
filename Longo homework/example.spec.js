@@ -41,6 +41,7 @@ for (let i = 0; i < count; i++) {
 const card = catalog.card(i)
 const title = await card.model()
 const price = await card.fullPrice()
+
 expect(title).toContain(carMake)
 expect(price).toBeGreaterThanOrEqual(Number(minPrice))
 expect(price).toBeLessThanOrEqual(Number(maxPrice))
@@ -165,6 +166,8 @@ const responsePromise = catalog.waitForResponse()
 await catalog.selectMake('Citroen')
 
 const response = await responsePromise
+
+
 expect(response.status(), 'Catalogue API should return HTTP 200').toBe(200)
 expect(response.headers()['content-type'], 'Catalogue API should return JSON')
   .toContain('application/json')

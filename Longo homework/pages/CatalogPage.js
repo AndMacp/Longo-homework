@@ -8,7 +8,7 @@ export class CatalogPage {
     this.resultCount = page.getByText('rezultāti')
     this.latvianTitle = page.getByRole('main').getByText('Lietoti auto', { exact: true })
     this.russianTitle = page.getByText('Продажа авто')
-    this.loadingMessage = page.getByText('Lapa atveras...', { exact: true })
+    this.loadingMessage = page.getByText('Lapa atveras...', { exact: true }) 
   }
 
   async open() { await this.page.goto('/automasinu-katalogs') }
