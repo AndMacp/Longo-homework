@@ -4,7 +4,9 @@ export class SiteNavigation {
     this.englishText = page.getByText('Used cars for sale')
   }
   async acceptCookies() {
-    await this.page.getByRole('button', { name: 'Atļaut visu' }).click()
+    await this.page
+      .getByRole('button', { name: /Atļaut visu|Accept all/ })
+      .click()
   }
   async switchLanguage(locale) { await this.page.getByText(locale, { exact: true }).click() }
   async openLatvianCatalog() {
