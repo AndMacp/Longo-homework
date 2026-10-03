@@ -142,8 +142,8 @@ test('Negative / empty state', async({page})=>
   await expect(page).toHaveURL('/automasinu-katalogs?makes=CITROEN&bodyTypes=Minivan&priceFrom=5000&priceTo=7000')
 
   await catalog.expandFilter(/^Gads$/)
-  await catalog.selectMinYear('2025')
-  await expect(page).toHaveURL('/automasinu-katalogs?makes=CITROEN&bodyTypes=Minivan&priceFrom=5000&priceTo=7000&yearFrom=2025')
+  await catalog.selectMinYear('2024')
+  await expect(page).toHaveURL('/automasinu-katalogs?makes=CITROEN&bodyTypes=Minivan&priceFrom=5000&priceTo=7000&yearFrom=2024')
 
   const cards = catalog.cards
   
